@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DyITELEC1C.props" />
+</Project>
