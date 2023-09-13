@@ -1,27 +1,41 @@
-﻿@{
-}
+﻿@model IEnumerable<Student>;
 
-        <h1>Student List</h1>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-        <table>
-            <tr>
-                <td>Name:</td>
-                <td>@ViewBag.student.StudentName</td>
-            </tr>
+    th, td {
+        padding: 10px;
+        border: 1px solid black;
+    }
+</style>
 
-            <tr>
-                <td>Date Enrolled:</td>
-                <td>@ViewBag.student.DateEnrolled</td>
-            </tr>
+<table class="padding">
 
-            <tr>
-                <td>Course:</td>
-                <td>@ViewBag.student.Course</td>
-            </tr>
+    <tr>
+        <th colspan="6">Student List</th>
+    </tr>
 
-            <tr>
-                <td>Email:</td>
-                <td>@ViewBag.student.Email</td>
-            </tr>
+    <tr>
+        <td>Name</td>
+        <td>Course</td>
+        <td>Admission Date</td>
+        <td>Email</td>
+        <td>Details</td>
 
-        </table>
+
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.FirstName @student.LastName</td>
+            <td>@student.Course</td>
+            <td>@student.AdmissionDate</td>
+            <td>@student.Email</td>
+            <td><a asp-action="ShowDetail" asp-route-id="@student.Id">Show Details</a></td>
+
+        </tr>
+    }
+</table>

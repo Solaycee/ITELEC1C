@@ -10,5 +10,6 @@
         public string InstructorEmail { get; set; }
         public DateTime DateHired { get; set;}
         public Rank Rank { get; set;}
+        public String IsTenured { get; set;}
     }
 }

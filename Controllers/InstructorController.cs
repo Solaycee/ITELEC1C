@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 using DyITELEC1C.Models;
+using System.Reflection.Metadata.Ecma335;
 
 namespace DyITELEC1C.Controllers
 {
@@ -32,7 +33,7 @@ namespace DyITELEC1C.Controllers
 
         public IActionResult Index()
         {
-            return View(InstructorList);
+            return View (InstructorList);
         }
     }
 }
