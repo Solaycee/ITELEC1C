@@ -31,7 +31,7 @@ namespace DyITELEC1C.Controllers
             Student? student = StudentList.FirstOrDefault(st => st.Id == id);
 
             if (student != null)
-                return View(student);
+                return View(student);                                                   
 
             return NotFound();
         }

@@ -1,0 +1,45 @@
+﻿
+@{
+}
+
+@model Instructor
+
+<h1>Instructor List</h1>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+</style>
+
+<table class="table table-dark">
+    <tr>
+        <th>Id</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <td>@Model.LastName</td>
+    </tr>
+    <tr>
+        <th>First Name</th>
+        <td>@Model.FirstName</td>
+    </tr>
+    <tr>
+        <th>Course</th>
+        <td>@Model.IsTenured</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Date Hired</th>
+        <td>@Model.DateHired</td>
+    </tr>
+</table>
