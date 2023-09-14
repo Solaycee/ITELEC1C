@@ -14,9 +14,9 @@ namespace DyITELEC1C.Controllers
                 Id = 1,
                 FirstName = "Orlan",
                 LastName = "Ventura",
-                IsTenured = "Permanent",
+                IsTenured = IsTenured.Permanent,
                 DateHired = DateTime.Now,
-                Email = "orlanventura@ust.edu.ph", 
+                Email = "orlanventura@ust.edu.ph",
                 Rank = Rank.Instructor
 
             },
@@ -26,7 +26,7 @@ namespace DyITELEC1C.Controllers
                 Id = 2,
                 FirstName = "Gabriel",
                 LastName = "Montano",
-                IsTenured = "Permanent",
+                IsTenured = IsTenured.Permanent,
                 DateHired = DateTime.Parse("20,2,2023"),
                 Email = "gdmontano@ust.edu.ph", 
                 Rank = Rank.AssistProf
@@ -37,7 +37,7 @@ namespace DyITELEC1C.Controllers
             {
                 FirstName = "Jed", 
                 LastName = "Hernandez",
-                IsTenured = "Probationary",
+                IsTenured = IsTenured.Probationary,
                 DateHired = DateTime.Parse("10,4,2021"),
                 Email = "jedhernandez@ust.edu.ph", 
                 Rank = Rank.Prof
@@ -57,6 +57,18 @@ namespace DyITELEC1C.Controllers
                 return View(instructor);
 
             return NotFound();
+        }
+        [HttpGet]
+        public IActionResult AddInstructor()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddInstructor(Instructor newInstructor)
+        {
+            InstructorList.Add(newInstructor);
+            return View("Index", InstructorList);
         }
     }
 }

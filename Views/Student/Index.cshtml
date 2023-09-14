@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Student>;
 
 <style>
+
     table {
         border-collapse: collapse;
         width: 100%;
@@ -10,7 +11,14 @@
         padding: 10px;
         border: 1px solid black;
     }
+
 </style>
+
+<div style="text-align: center;">
+    <a class="btn btn-secondary" asp-action="AddStudent">Add Student</a>
+</div>
+
+<br/>
 
 <table class="padding">
 
@@ -19,14 +27,13 @@
     </tr>
 
     <tr>
-        <td>Name</td>
-        <td>Course</td>
-        <td>Admission Date</td>
-        <td>Email</td>
-        <td>Details</td>
-
-
+        <th>Name</th>
+        <th>Course</th>
+        <th>Admission Date</th>
+        <th>Email</th>
+        <th>Details</td>
     </tr>
+
     @foreach (var student in Model)
     {
         <tr>
@@ -35,7 +42,6 @@
             <td>@student.AdmissionDate</td>
             <td>@student.Email</td>
             <td><a asp-action="ShowDetail" asp-route-id="@student.Id">Show Details</a></td>
-
         </tr>
     }
 </table>
