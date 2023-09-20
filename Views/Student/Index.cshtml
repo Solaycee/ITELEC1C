@@ -23,7 +23,7 @@
 <table class="padding">
 
     <tr>
-        <th colspan="6">Student List</th>
+        <th colspan="7">Student List</th>
     </tr>
 
     <tr>
@@ -31,7 +31,8 @@
         <th>Course</th>
         <th>Admission Date</th>
         <th>Email</th>
-        <th>Details</td>
+        <th>Details</th>
+        <th>Update</th>
     </tr>
 
     @foreach (var student in Model)
@@ -42,6 +43,8 @@
             <td>@student.AdmissionDate</td>
             <td>@student.Email</td>
             <td><a asp-action="ShowDetail" asp-route-id="@student.Id">Show Details</a></td>
+            <td><a asp-action="UpdateStudent" asp-route-id="@student.Id">Update Info</a></td>
         </tr>
     }
 </table>
+    

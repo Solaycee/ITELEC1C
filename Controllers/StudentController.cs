@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DyITELEC1C.Models;
+using System.Reflection.Metadata.Ecma335;
 
 namespace DyITELEC1C.Controllers
 {
@@ -48,5 +49,32 @@ namespace DyITELEC1C.Controllers
             StudentList.Add(newStudent);
             return View("Index", StudentList);
         }
+
+        [HttpGet]
+        public IActionResult UpdateStudent(int id)
+        {
+            Student? student = StudentList.FirstOrDefault(st => st.Id == id);
+
+            if (student != null)
+                return View(student);
+
+            return NotFound();
+        }
+
+        [HttpPost]
+        public IActionResult UpdateStudent(Student updateStudent)
+        {
+            Student? student = StudentList.FirstOrDefault(st => st.Id == updateStudent.Id);
+            
+            if (student != null)
+            {
+                student.FirstName = updateStudent.FirstName;
+                student.LastName = updateStudent.LastName;  
+                student.Email = updateStudent.Email;    
+                student.Course = updateStudent.Course;  
+                student.AdmissionDate = updateStudent.AdmissionDate;
+            }
+                return View("Index", StudentList);
+        }
     }
-}
+} 
