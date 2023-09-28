@@ -1,35 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DyITELEC1C.Models;
 using System.Reflection.Metadata.Ecma335;
+using DyITELEC1C.Services;
 
 namespace DyITELEC1C.Controllers
 {
     public class StudentController : Controller
     {
-        List<Student> StudentList = new List<Student>
-            {
-                new Student()
-                {
-                    Id= 1,FirstName = "Ryan Christopher",LastName = "Dy", Course = Course.BSIT, AdmissionDate = DateTime.Parse("2021-05-05"), Email = "ryandy02@gmail.com"
-                },
-                new Student()
-                {
-                    Id= 2,FirstName = "John Paolo",LastName = "Tan", Course = Course.BSIS, AdmissionDate = DateTime.Parse("2020-05-03"), Email = "johnpaolotan@gmail.com"
-                },
-                new Student()
-                {
-                    Id= 3,FirstName = "Kyla Angela",LastName = "Montilla", Course = Course.BSCS, AdmissionDate = DateTime.Parse("2022-06-17"), Email = "kylamontilla@gmail.com"
-                }
-            };
+        private readonly IMyFakeDataService _dummyData;
+        
+        public StudentController(IMyFakeDataService dummyData) 
+        {
+            _dummyData = dummyData;
+        }
+       
         public IActionResult Index()
         {
 
-            return View(StudentList);
+            return View(_dummyData.StudentList);
         }
 
         public IActionResult ShowDetail(int id)
         {
-            Student? student = StudentList.FirstOrDefault(st => st.Id == id);
+            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == id);
 
             if (student != null)
                 return View(student);                                                   
@@ -46,14 +39,15 @@ namespace DyITELEC1C.Controllers
         [HttpPost]
         public IActionResult AddStudent(Student newStudent) 
         { 
-            StudentList.Add(newStudent);
-            return View("Index", StudentList);
+            _dummyData.StudentList.Add(newStudent);
+            return RedirectToAction("Index");
+            //return View("Index", _dummyData.StudentList);
         }
 
         [HttpGet]
         public IActionResult UpdateStudent(int id)
         {
-            Student? student = StudentList.FirstOrDefault(st => st.Id == id);
+            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == id);
 
             if (student != null)
                 return View(student);
@@ -64,7 +58,7 @@ namespace DyITELEC1C.Controllers
         [HttpPost]
         public IActionResult UpdateStudent(Student updateStudent)
         {
-            Student? student = StudentList.FirstOrDefault(st => st.Id == updateStudent.Id);
+            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == updateStudent.Id);
             
             if (student != null)
             {
@@ -74,7 +68,35 @@ namespace DyITELEC1C.Controllers
                 student.Course = updateStudent.Course;  
                 student.AdmissionDate = updateStudent.AdmissionDate;
             }
-                return View("Index", StudentList);
+            return RedirectToAction("Index");
+            //return View("Index", _dummyData.StudentList);
+        }
+
+        public IActionResult DeleteStudent()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult DeleteStudent(int id)
+        {
+            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == id);
+
+            if (student != null)
+                return View(student);
+
+            return NotFound();
+        }
+
+        [HttpPost]
+        public IActionResult DeleteStudent(Student deleteStudent)
+        {
+            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == deleteStudent.Id);
+
+            if (student != null)
+                _dummyData.StudentList.Remove(student);
+            return RedirectToAction("Index");
+            //return View("Index", _dummyData.StudentList);
         }
     }
 } 

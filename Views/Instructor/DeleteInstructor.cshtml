@@ -20,51 +20,51 @@
 </style>
 
 <div style="text-align: center">
-    <h1>Update Instructor</h1>
+    <h1>Are you sure you want to delete?</h1>
 </div>
 
-<form asp-action="UpdateInstructor" asp-controller="Instructor"
+<form asp-action="DeleteInstructor" asp-controller="Instructor"
       method="post">
 
     <div class="form-group">
         <label asp-for="Id" hidden>Instructor Id</label>
         <input asp-for="Id" class="form-control"
-               id="Id" placeholder="Enter Instructor Id" hidden>
+        id="Id" placeholder="Enter Instructor Id" hidden>
     </div>
     <div class="form-group">
-        <label asp-for="FirstName">First Name</label>
+        <label asp-for="FirstName" readonly>First Name</label>
         <input asp-for="FirstName" class="form-control"
-               id="FirstName" placeholder="Enter First Name">
+        id="FirstName" placeholder="Enter First Name" readonly>
     </div>
     <div class="form-group">
-        <label asp-for="LastName">Last Name</label>
+        <label asp-for="LastName" readonly>Last Name</label>
         <input asp-for="LastName" class="form-control"
-               id="LastName" placeholder="Enter Last Name">
+        id="LastName" placeholder="Enter Last Name" readonly>
     </div>
     <div class="form-group">
-        <label asp-for="Email">Enter University Email</label>
+        <label asp-for="Email" readonly>Enter University Email</label>
         <input asp-for="Email" class="form-control"
-         id="Email" placeholder="Enter University Email">
+         id="Email" placeholder="Enter University Email" readonly>
     </div>
     <div class="form-group">
-        <label asp-for="Rank">Course</label>
+        <label asp-for="Rank" disabled>Course</label>
         <select asp-for="Rank" asp-items="@Html.GetEnumSelectList(typeof(Rank))"
-        class="form-control" id="Rank" placeholder="Choose Rank"></select>
+        class="form-control" id="Rank" placeholder="Choose Rank" disabled></select>
     </div>
     <div class="form-group">
-        <label asp-for="DateHired">Admission Date</label>
+        <label asp-for="DateHired" readonly>Admission Date</label>
         <input asp-for="DateHired" class="form-control"
-        id="DateHired" placeholder="Enter Date Hired">
+        id="DateHired" placeholder="Enter Date Hired" readonly>
     </div>
     <div class="form-group">
-        <label asp-for="IsTenured">Course</label>
+        <label asp-for="IsTenured" disabled>Course</label>
         <select asp-for="IsTenured" asp-items="@Html.GetEnumSelectList(typeof(IsTenured))"
-         class="form-control" id="IsTenured" placeholder="Choose Tenure"></select>
+         class="form-control" id="IsTenured" placeholder="Choose Tenure" disabled></select>
     </div>
     <br />
 
     <div style="text-align: center;">
-        <button type="submit" class="btn btn-primary">Sync</button>
+        <button type="submit" class="btn btn-primary">Delete</button>
         <button type="button" onclick="history.back()" class="btn btn-primary">Cancel</button>
      </div>
 </form>

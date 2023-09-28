@@ -20,10 +20,10 @@
 </style>
 
 <div style="text-align: center">
-<h1>Update Student</h1>
+    <h1>Are you sure you want to delete?</h1>
 </div>
 
-<form asp-action="UpdateStudent" asp-controller="Student" 
+<form asp-action="DeleteStudent" asp-controller="Student"
 method="post">
 
     <div class="form-group">
@@ -32,35 +32,35 @@ method="post">
          id="FirstName" placeholder="Enter Student Id" hidden>
     </div>
     <div class="form-group">
-        <label asp-for="FirstName">First Name</label>
+        <label asp-for="FirstName" readonly>First Name</label>
         <input asp-for="FirstName" class="form-control" 
-        id="FirstName" placeholder="Enter First Name">
+        id="FirstName" placeholder="Enter First Name" readonly>
     </div>
     <div class="form-group">
-        <label asp-for="LastName">Last Name</label>
+        <label asp-for="LastName" readonly>Last Name</label>
         <input asp-for="LastName" class="form-control" 
-        id="LastName" placeholder="Enter Last Name">
+        id="LastName" placeholder="Enter Last Name" readonly>
     </div>
     <div class="form-group">
-        <label asp-for="Course">Course</label>
+        <label asp-for="Course" disable>Course</label>
         <select asp-for="Course" asp-items="@Html.GetEnumSelectList(typeof(Course))"
-        class="form-control" id="Course" placeholder="Choose Course"></select>
+        class="form-control" id="Course" placeholder="Choose Course" disable></select>
     </div>
     <div class="form-group">
-        <label asp-for="AdmissionDate">Admission Date</label>
+        <label asp-for="AdmissionDate" readonly>Admission Date</label>
         <input asp-for="AdmissionDate" class="form-control" 
-        id="AdmissionDate" placeholder="Enter Admission Date">
+        id="AdmissionDate" placeholder="Enter Admission Date" readonly>
     </div>
     <div class="form-group">
-        <label asp-for="Email">Enter University Email</label>
+        <label asp-for="Email" readonly>Enter University Email</label>
         <input asp-for="Email" class="form-control" 
-        id="Email" placeholder="Enter University Email">
+        id="Email" placeholder="Enter University Email" readonly>
     </div>
 
     <br/>
 
     <div style="text-align: center;">
-    <button type="submit" class="btn btn-primary">Sync</button>
+    <button type="submit" class="btn btn-primary">Delete</button>
     <button type="button" onclick="history.back()"  class="btn btn-primary">Cancel</button>
     </div>
 </form>
