@@ -2,27 +2,28 @@
 using DyITELEC1C.Models;
 using System.Reflection.Metadata.Ecma335;
 using DyITELEC1C.Services;
+using DyITELEC1C.Data;
 
 namespace DyITELEC1C.Controllers
 {
     public class StudentController : Controller
     {
-        private readonly IMyFakeDataService _dummyData;
+        private readonly AppDbContext _dbData;
         
-        public StudentController(IMyFakeDataService dummyData) 
+        public StudentController(AppDbContext dbData) 
         {
-            _dummyData = dummyData;
+            _dbData = dbData;
         }
        
         public IActionResult Index()
         {
 
-            return View(_dummyData.StudentList);
+            return View(_dbData.Students);
         }
 
         public IActionResult ShowDetail(int id)
         {
-            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == id);
+            Student? student = _dbData.Students.FirstOrDefault(st => st.Id == id);
 
             if (student != null)
                 return View(student);                                                   
@@ -38,16 +39,22 @@ namespace DyITELEC1C.Controllers
 
         [HttpPost]
         public IActionResult AddStudent(Student newStudent) 
-        { 
-            _dummyData.StudentList.Add(newStudent);
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+                _dbData.Students.Add(newStudent);
+                return RedirectToAction("Index");
+            }
+            _dbData.Students.Add(newStudent);
             return RedirectToAction("Index");
-            //return View("Index", _dummyData.StudentList);
+            //return View("Index", _dbData.StudentList);
         }
 
         [HttpGet]
         public IActionResult UpdateStudent(int id)
         {
-            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == id);
+            Student? student = _dbData.Students.FirstOrDefault(st => st.Id == id);
 
             if (student != null)
                 return View(student);
@@ -58,7 +65,7 @@ namespace DyITELEC1C.Controllers
         [HttpPost]
         public IActionResult UpdateStudent(Student updateStudent)
         {
-            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == updateStudent.Id);
+            Student? student = _dbData.Students.FirstOrDefault(st => st.Id == updateStudent.Id);
             
             if (student != null)
             {
@@ -69,7 +76,7 @@ namespace DyITELEC1C.Controllers
                 student.AdmissionDate = updateStudent.AdmissionDate;
             }
             return RedirectToAction("Index");
-            //return View("Index", _dummyData.StudentList);
+            //return View("Index", _dbData.StudentList);
         }
 
         public IActionResult DeleteStudent()
@@ -80,7 +87,7 @@ namespace DyITELEC1C.Controllers
         [HttpGet]
         public IActionResult DeleteStudent(int id)
         {
-            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == id);
+            Student? student = _dbData.Students.FirstOrDefault(st => st.Id == id);
 
             if (student != null)
                 return View(student);
@@ -91,12 +98,12 @@ namespace DyITELEC1C.Controllers
         [HttpPost]
         public IActionResult DeleteStudent(Student deleteStudent)
         {
-            Student? student = _dummyData.StudentList.FirstOrDefault(st => st.Id == deleteStudent.Id);
+            Student? student = _dbData.Students.FirstOrDefault(st => st.Id == deleteStudent.Id);
 
             if (student != null)
-                _dummyData.StudentList.Remove(student);
+                _dbData.Students.Remove(student);
             return RedirectToAction("Index");
-            //return View("Index", _dummyData.StudentList);
+            //return View("Index", _dbData.StudentList);
         }
     }
 } 

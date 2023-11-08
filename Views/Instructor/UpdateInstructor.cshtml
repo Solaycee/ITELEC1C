@@ -1,4 +1,6 @@
-﻿@{
+﻿
+
+@{
 }
 @model Instructor
 <style>
@@ -27,22 +29,22 @@
       method="post">
 
     <div class="form-group">
-        <label asp-for="Id" hidden>Instructor Id</label>
+        <label asp-for="Id" hidden></label>
         <input asp-for="Id" class="form-control"
-               id="Id" placeholder="Enter Instructor Id" hidden>
+               id="Id" hidden>
     </div>
     <div class="form-group">
-        <label asp-for="FirstName">First Name</label>
+        <label asp-for="FirstName"></label>
         <input asp-for="FirstName" class="form-control"
                id="FirstName" placeholder="Enter First Name">
     </div>
     <div class="form-group">
-        <label asp-for="LastName">Last Name</label>
+        <label asp-for="LastName"></label>
         <input asp-for="LastName" class="form-control"
                id="LastName" placeholder="Enter Last Name">
     </div>
     <div class="form-group">
-        <label asp-for="Email">Enter University Email</label>
+        <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control"
          id="Email" placeholder="Enter University Email">
     </div>
@@ -52,12 +54,12 @@
         class="form-control" id="Rank" placeholder="Choose Rank"></select>
     </div>
     <div class="form-group">
-        <label asp-for="DateHired">Admission Date</label>
+        <label asp-for="DateHired"></label>
         <input asp-for="DateHired" class="form-control"
         id="DateHired" placeholder="Enter Date Hired">
     </div>
     <div class="form-group">
-        <label asp-for="IsTenured">Course</label>
+        <label asp-for="IsTenured"></label>
         <select asp-for="IsTenured" asp-items="@Html.GetEnumSelectList(typeof(IsTenured))"
          class="form-control" id="IsTenured" placeholder="Choose Tenure"></select>
     </div>

@@ -3,24 +3,25 @@ using System.ComponentModel;
 using DyITELEC1C.Models;
 using System.Reflection.Metadata.Ecma335;
 using DyITELEC1C.Services;
+using DyITELEC1C.Data;
 
 namespace DyITELEC1C.Controllers
 {
     public class InstructorController : Controller
     {
-        private readonly IMyFakeDataService _dummyData;
-        public InstructorController(IMyFakeDataService dummyData)
+        private readonly AppDbContext _dbData;
+        public InstructorController(AppDbContext dbData)
         {
-            _dummyData = dummyData;
+            _dbData = dbData;
         }
 
         public IActionResult Index()
         {
-            return View (_dummyData.InstructorList);
+            return View (_dbData.Instructors);
         }
         public IActionResult ShowDetail(int id)
         {
-            Instructor? instructor = _dummyData.InstructorList.FirstOrDefault(qe => qe.Id == id);
+            Instructor? instructor = _dbData.Instructors.FirstOrDefault(qe => qe.Id == id);
 
             if (instructor != null)
                 return View(instructor);
@@ -36,7 +37,14 @@ namespace DyITELEC1C.Controllers
         [HttpPost]
         public IActionResult AddInstructor(Instructor newInstructor)
         {
-            _dummyData.InstructorList.Add(newInstructor);
+            if (!ModelState.IsValid)
+            {
+                return View();
+                _dbData.Instructors.Add(newInstructor);
+                return RedirectToAction("Index");
+
+            }
+            _dbData.Instructors.Add(newInstructor);
             return RedirectToAction("Index");
             //return View("Index", InstructorList);
         }
@@ -45,7 +53,7 @@ namespace DyITELEC1C.Controllers
         
         public IActionResult UpdateInstructor(int id)
         {
-            Instructor? instructor = _dummyData.InstructorList.FirstOrDefault(st => st.Id == id);
+            Instructor? instructor = _dbData.Instructors.FirstOrDefault(st => st.Id == id);
 
             if (instructor != null)
                 return View(instructor);
@@ -57,7 +65,7 @@ namespace DyITELEC1C.Controllers
         
         public IActionResult UpdateInstructor(Instructor UpdateInstructor)
         {
-            Instructor? instructor = _dummyData.InstructorList.FirstOrDefault(st => st.Id == UpdateInstructor.Id);
+            Instructor? instructor = _dbData.Instructors.FirstOrDefault(st => st.Id == UpdateInstructor.Id);
 
             if(instructor != null)
             {
@@ -69,7 +77,7 @@ namespace DyITELEC1C.Controllers
                 instructor.DateHired = UpdateInstructor.DateHired;
             }
             return RedirectToAction("Index");
-            //return View("Index", _dummyData.InstructorList);
+            //return View("Index", _dbData.InstructorList);
         }
         public IActionResult DeleteInstructor()
         {
@@ -81,7 +89,7 @@ namespace DyITELEC1C.Controllers
 
         public IActionResult DeleteInstructor(int id)
         {
-            Instructor? instructor = _dummyData.InstructorList.FirstOrDefault(st => st.Id == id);
+            Instructor? instructor = _dbData.Instructors.FirstOrDefault(st => st.Id == id);
 
             if (instructor != null)
                 return View(instructor);
@@ -92,12 +100,12 @@ namespace DyITELEC1C.Controllers
         [HttpPost]
         public IActionResult DeleteInstructor(Student deleteInstructor)
         {
-            Instructor? instructor = _dummyData.InstructorList.FirstOrDefault(st => st.Id == deleteInstructor.Id);
+            Instructor? instructor = _dbData.Instructors.FirstOrDefault(st => st.Id == deleteInstructor.Id);
 
             if (instructor != null)
-                _dummyData.InstructorList.Remove(instructor);
+                _dbData.Instructors.Remove(instructor);
             return RedirectToAction("Index");
-            //return View("Index", _dummyData.InstructorList);
+            //return View("Index", _dbData.InstructorList);
         }
     }
 }

@@ -27,32 +27,32 @@
 method="post">
 
     <div class="form-group">
-        <label asp-for="Id" hidden>Student Id</label>
+        <label asp-for="Id" hidden></label>
         <input asp-for="Id" class="form-control"
-         id="FirstName" placeholder="Enter Student Id" hidden>
+         id="FirstName" hidden>
     </div>
     <div class="form-group">
-        <label asp-for="FirstName">First Name</label>
+        <label asp-for="FirstName"></label>
         <input asp-for="FirstName" class="form-control" 
         id="FirstName" placeholder="Enter First Name">
     </div>
     <div class="form-group">
-        <label asp-for="LastName">Last Name</label>
+        <label asp-for="LastName"></label>
         <input asp-for="LastName" class="form-control" 
         id="LastName" placeholder="Enter Last Name">
     </div>
     <div class="form-group">
-        <label asp-for="Course">Course</label>
+        <label asp-for="Course"></label>
         <select asp-for="Course" asp-items="@Html.GetEnumSelectList(typeof(Course))"
         class="form-control" id="Course" placeholder="Choose Course"></select>
     </div>
     <div class="form-group">
-        <label asp-for="AdmissionDate">Admission Date</label>
+        <label asp-for="AdmissionDate"></label>
         <input asp-for="AdmissionDate" class="form-control" 
         id="AdmissionDate" placeholder="Enter Admission Date">
     </div>
     <div class="form-group">
-        <label asp-for="Email">Enter University Email</label>
+        <label asp-for="Email"></label>
         <input asp-for="Email" class="form-control" 
         id="Email" placeholder="Enter University Email">
     </div>
