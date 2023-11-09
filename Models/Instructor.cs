@@ -13,6 +13,7 @@ namespace DyITELEC1C.Models
     }
     public class Instructor
     {
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "First Name is Required")]
         [Display(Name = "First Name")]

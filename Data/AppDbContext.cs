@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using DyITELEC1C.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 namespace DyITELEC1C.Data
 
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
         public DbSet<Student> Students { get; set; }
 

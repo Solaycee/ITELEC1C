@@ -1,4 +1,5 @@
 ﻿using DyITELEC1C.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -12,7 +13,6 @@ namespace DyITELEC1C.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();

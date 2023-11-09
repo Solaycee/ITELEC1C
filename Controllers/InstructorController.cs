@@ -4,6 +4,7 @@ using DyITELEC1C.Models;
 using System.Reflection.Metadata.Ecma335;
 using DyITELEC1C.Services;
 using DyITELEC1C.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DyITELEC1C.Controllers
 {
@@ -15,6 +16,7 @@ namespace DyITELEC1C.Controllers
             _dbData = dbData;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             return View (_dbData.Instructors);
