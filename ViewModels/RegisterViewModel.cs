@@ -11,7 +11,7 @@ namespace DyITELEC1C.ViewModels
             [Display(Name = "Password")]
             [Required(ErrorMessage = "Please Enter your Password")]
             public string? Password { get; set; }
-            [Display(Name = "Password")]
+            [Display(Name = "Confirm Password")]
             [Required(ErrorMessage = "Must Confirm Password")]
             public string? ConfirmPassword { get; set; }
             [Required(ErrorMessage = "Please enter Email")]

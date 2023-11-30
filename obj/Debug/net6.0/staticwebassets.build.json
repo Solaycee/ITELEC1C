@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DK+8GNQ9H/cTTkR1k9TAT1DxIuB0ZYxyY8gMa1dGIZk=",
+  "Hash": "2KUbDTe+jkpSul72YB9cM3p7mKs2NHr6XCJNYn1yypk=",
   "Source": "DyITELEC1C",
   "BasePath": "_content/DyITELEC1C",
   "Mode": "Default",
@@ -1222,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\instructor\\images\\753dec6f-7d40-4256-aa3d-d49b333c5ac8_dhome3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\991113ce-9d99-4c31-a389-67de76fa9525_dhome2.jpg",
+      "SourceId": "DyITELEC1C",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\",
+      "BasePath": "_content/DyITELEC1C",
+      "RelativePath": "instructor/images/991113ce-9d99-4c31-a389-67de76fa9525_dhome2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\instructor\\images\\991113ce-9d99-4c31-a389-67de76fa9525_dhome2.jpg"
     },
     {
       "Identity": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\b58a7946-341f-448f-b7d6-a8cb0c219ec0_dhome3.jpg",

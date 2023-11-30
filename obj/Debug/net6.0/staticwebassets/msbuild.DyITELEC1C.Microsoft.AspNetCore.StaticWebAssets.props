@@ -160,6 +160,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\instructor\images\753dec6f-7d40-4256-aa3d-d49b333c5ac8_dhome3.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\instructor\images\991113ce-9d99-4c31-a389-67de76fa9525_dhome2.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>DyITELEC1C</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DyITELEC1C</BasePath>
+      <RelativePath>instructor/images/991113ce-9d99-4c31-a389-67de76fa9525_dhome2.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\instructor\images\991113ce-9d99-4c31-a389-67de76fa9525_dhome2.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\instructor\images\b58a7946-341f-448f-b7d6-a8cb0c219ec0_dhome3.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>DyITELEC1C</SourceId>
