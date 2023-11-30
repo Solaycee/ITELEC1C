@@ -3,7 +3,9 @@ using DyITELEC1C.Models;
 using DyITELEC1C.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace DyITELEC1C.Controllers
 {
@@ -53,7 +55,10 @@ namespace DyITELEC1C.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel userEnteredData)
         {
-            if(ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return View();
+            
+            if (ModelState.IsValid)
             {
                 User newUser = new User();
                 newUser.UserName = userEnteredData.UserName;
@@ -73,8 +78,9 @@ namespace DyITELEC1C.Controllers
                     foreach (var error in result.Errors)
                         ModelState.AddModelError("", error.Description);
                 }
+
             }
-            return View(userEnteredData);   
+            return View(userEnteredData);
         }
     }
 }

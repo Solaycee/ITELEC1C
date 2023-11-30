@@ -27,12 +27,12 @@
 
 <div asp-validation-summary="All" class="text-danger"></div>
 <form asp-action="AddInstructor" asp-controller="Instructor"
-      method="post">
+      method="post" enctype ="multipart/form-data">
 
     <div class="form-group">
-        <label asp-for="Id" hidden></label>
-        <input asp-for="Id" class="form-control"
-               id="Id" hidden>
+        <label asp-for="UploadedPhoto"></label>
+        <input class="form-control"
+        id="UploadedPhoto" asp-for="UploadedPhoto">
     </div>
     <div class="form-group">
         <label asp-for="FirstName"></label>

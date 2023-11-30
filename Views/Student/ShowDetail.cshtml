@@ -2,6 +2,12 @@
 
 <h1>Student Details</h1>
 
+@if(ViewBag.StudentProfilePhoto != null)
+{
+    <img src = "@ViewBag.StudentProfilePhoto" 
+    class="img-thumbnail" width="20%" alt="profile picture for @Model.LastName"/>
+}
+
 <table class="table table-dark">
     <tr>
         <th>Id</th>

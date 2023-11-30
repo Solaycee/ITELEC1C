@@ -25,18 +25,19 @@
 
 <div asp-validation-summary="All" class="text-danger"></div>
 <form asp-action="AddStudent" asp-controller="Student" 
-method="post">
+method="post" enctype="multipart/form-data">
 
     <div class="form-group">
-        <label asp-for="Id" hidden></label>
-        <input asp-for="Id" class="form-control"
-         id="FirstName" hidden>
+        <label asp-for="StudentProfilePhoto"></label>
+        <input type="file" class="form-control"
+         id="StudentProfilePhoto" name="Student Profile Photo">
     </div>
     <div class="form-group">
         <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" class="form-control" 
-        id="FirstName" placeholder="Enter First Name">
+        <input asp-for="FirstName" class="form-control"
+         id="FirstName" placeholder="Enter First Name">
     </div>
+
     <div class="form-group">
         <label asp-for="LastName"></label>
         <input asp-for="LastName" class="form-control" 

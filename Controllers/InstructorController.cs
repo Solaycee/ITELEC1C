@@ -11,9 +11,11 @@ namespace DyITELEC1C.Controllers
     public class InstructorController : Controller
     {
         private readonly AppDbContext _dbData;
-        public InstructorController(AppDbContext dbData)
+        private readonly IWebHostEnvironment _environment;
+        public InstructorController(AppDbContext dbData, IWebHostEnvironment environment)
         {
             _dbData = dbData;
+            _environment = environment;
         }
 
         [Authorize]
@@ -42,14 +44,20 @@ namespace DyITELEC1C.Controllers
             if (!ModelState.IsValid)
             {
                 return View();
-                _dbData.Instructors.Add(newInstructor);
-                return RedirectToAction("Index");
-
             }
-            _dbData.Instructors.Add(newInstructor);
-            return RedirectToAction("Index");
-            //return View("Index", InstructorList);
-        }
+            string folder = "instructor/images/";
+            string serverFolder = Path.Combine(_environment.WebRootPath, folder);
+            string uniqueFileName = Guid.NewGuid().ToString() + "_" + newInstructor.UploadedPhoto.FileName;
+            string filePath = Path.Combine(serverFolder, uniqueFileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        newInstructor.UploadedPhoto.CopyTo(fileStream);
+                    }
+                    newInstructor.imagePath = folder + uniqueFileName;
+                _dbData.Instructors.Add(newInstructor);
+                _dbData.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
         [HttpGet]
         

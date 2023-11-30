@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
 namespace DyITELEC1C.Models
@@ -40,5 +41,11 @@ namespace DyITELEC1C.Models
         [RegularExpression("[0-9]{2}-[0-9]{3}-[0-9]{4}", ErrorMessage = "Follow the " +
             "Format 00-000-0000")]
         public string? Phone { get; set; }
+
+        [NotMapped]
+        public IFormFile? UploadedPhoto { get; set; }
+
+        [Display(Name = "Profile Picture")]
+        public string? imagePath {  get; set; }
     }
 }

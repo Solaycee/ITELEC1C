@@ -28,7 +28,15 @@ namespace DyITELEC1C.Controllers
             Student? student = _dbData.Students.FirstOrDefault(st => st.Id == id);
 
             if (student != null)
-                return View(student);                                                   
+            {
+                if(student.StudentProfilePhoto!=null)
+                {
+                string imageBase64Data = Convert.ToBase64String(student.StudentProfilePhoto);
+                string imageDataURL = string.Format("data:image/jpg;base64, {0}", imageBase64Data);
+                ViewBag.StudentProfilePhoto = imageDataURL;
+                }
+                return View(student);
+            }
 
             return NotFound();
         }
@@ -45,10 +53,20 @@ namespace DyITELEC1C.Controllers
             if (!ModelState.IsValid)
             {
                 return View();
-                _dbData.Students.Add(newStudent);
-                return RedirectToAction("Index");
+            }
+            if (Request.Form.Files.Count > 0)
+            {
+                var file = Request.Form.Files[0];
+
+                MemoryStream ms = new MemoryStream();
+                file.CopyTo(ms);
+                newStudent.StudentProfilePhoto = ms.ToArray();
+
+                ms.Close();
+                ms.Dispose();
             }
             _dbData.Students.Add(newStudent);
+            _dbData.SaveChanges();
             return RedirectToAction("Index");
             //return View("Index", _dbData.StudentList);
         }

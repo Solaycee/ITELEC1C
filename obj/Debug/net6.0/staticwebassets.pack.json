@@ -13,6 +13,58 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\0af502d5-fd3b-4aee-b4e8-cafa54b01bf7_EyebrowSet.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\0af502d5-fd3b-4aee-b4e8-cafa54b01bf7_EyebrowSet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\38d2b228-9064-49ea-8a8c-36a69d7a6159_dhome2.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\38d2b228-9064-49ea-8a8c-36a69d7a6159_dhome2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\3cfbb7a7-e64a-4617-a772-b6aae5b0f7b5_dhome2.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\3cfbb7a7-e64a-4617-a772-b6aae5b0f7b5_dhome2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\42494fcf-3726-4adc-ad68-24aff6d6f5e3_dhome3.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\42494fcf-3726-4adc-ad68-24aff6d6f5e3_dhome3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\43e0ea68-fa23-4e63-ae02-ddbbb12ca2dd_dhome3.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\43e0ea68-fa23-4e63-ae02-ddbbb12ca2dd_dhome3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\7300ae35-0040-4454-a42e-32b3e114ee1b_dhome3.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\7300ae35-0040-4454-a42e-32b3e114ee1b_dhome3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\753dec6f-7d40-4256-aa3d-d49b333c5ac8_dhome3.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\753dec6f-7d40-4256-aa3d-d49b333c5ac8_dhome3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\b58a7946-341f-448f-b7d6-a8cb0c219ec0_dhome3.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\b58a7946-341f-448f-b7d6-a8cb0c219ec0_dhome3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\c7adecfc-f4b2-4047-995d-7d9c07010225_EyebrowSet.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\c7adecfc-f4b2-4047-995d-7d9c07010225_EyebrowSet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\cebd909a-29d6-4a78-b0a8-c12118485339_dhome3.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\cebd909a-29d6-4a78-b0a8-c12118485339_dhome3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\eecadacc-2816-4cfc-a3c4-ab3437b1e415_dhome3.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\eecadacc-2816-4cfc-a3c4-ab3437b1e415_dhome3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\f5c7711e-d4b5-4a41-9ed9-835c5c3a587b_EyebrowSet.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\f5c7711e-d4b5-4a41-9ed9-835c5c3a587b_EyebrowSet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\instructor\\images\\ff4ac29a-7e29-4182-8cf9-9150501e47bb_dhome1.jpg",
+      "PackagePath": "staticwebassets\\instructor\\images\\ff4ac29a-7e29-4182-8cf9-9150501e47bb_dhome1.jpg"
+    },
+    {
       "Id": "C:\\Users\\Ryan Dy\\source\\repos\\DyITELEC1C\\DyITELEC1C\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
